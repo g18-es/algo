@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int a[10],i,j,k,temp;
+       
+   for(int i = 0; i<10; i++) //get input in array
+   {
+       cin >> a[i];
+   }
+    //start sorting
+    for(i = 0; i<10; i++)
+    {
+        for(j = 0; j<i; j++)
+        {
+            if(a[i]<a[j])
+            {
+                if(i-j !=1)
+                {
+                    temp = a[i];
+                    for(k =0; k<i-j; k++)
+                    {
+                        a[i-k] = a[i-k-1];
+                    }
+                    a[j] = temp;
+                }
+                else
+                {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+    }
+   
+   for(i = 0; i<10; i++) //print it out
+   {
+        cout << a[i] << endl;   
+   }
+   return 0;
+}
